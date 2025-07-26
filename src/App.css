@@ -46,11 +46,13 @@ body {
 }
 
 .contact-info {
+  font-family: 'Fira Sans', sans-serif;
   display: flex;
   flex-wrap: wrap;
+  letter-spacing: 0.02em;
   justify-content: center;
   gap: 1.2rem;
-  font-size: 1rem;
+  word-break: break-word;
   color: #d4d4d8;
 }
 
