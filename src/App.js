@@ -67,7 +67,6 @@ const App = () => {
                 ],
             }
         ],
-
         education: [
             {
                 degree: 'Masters in Computer Science',
