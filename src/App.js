@@ -7,7 +7,7 @@ const App = () => {
 
     const profileData = {
         name: 'SAJJAD HASHMANI',
-        contact: 'sajjadhashmani1@gmail.com • (682)-256-5391 • Boston',
+        contact: 'sajjadhashmani1@gmail.com • (682)-256-5391 • Boston, MA • US Resident',
         summary:
             'I’m a Full Stack Software Engineer with a Master’s degree in Computer Science and over 7 years of experience designing, building, and scaling secure, performant web applications. My technical stack spans both front-end and back-end development, with a strong foundation in React, Node.js, Java, and Python.\n' +
             '\n' +
