@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {FaEnvelope, FaPhone, FaMapMarkerAlt, FaFlag, FaGlobeAmericas} from 'react-icons/fa';
 import './App.css';
 
 const App = () => {
@@ -7,7 +8,12 @@ const App = () => {
 
     const profileData = {
         name: 'SAJJAD HASHMANI',
-        contact: 'sajjadhashmani1@gmail.com • (682)-256-5391 • Boston, MA • US Resident',
+        contact: {
+            email: 'sajjadhashmani1@gmail.com',
+            phone: '(682) 256-5391',
+            location: 'Boston, MA',
+            visaStatus: 'US Resident',
+        },
         summary:
             'I’m a Full Stack Software Engineer with a Master’s degree in Computer Science and over 7 years of experience designing, building, and scaling secure, performant web applications. My technical stack spans both front-end and back-end development, with a strong foundation in React, Node.js, Java, and Python.\n' +
             '\n' +
@@ -198,8 +204,23 @@ const App = () => {
     return (
         <div className="app">
             <header className="header">
-                <h1>{profileData.name}</h1>
-                <p class="contact-info"> {profileData.contact}</p>
+                <h1 className="header-name">{profileData.name}</h1>
+                <div className="contact-info">
+                    <a href={`mailto:${profileData.contact.email}`} className="contact-item" target="_blank"
+                       rel="noopener noreferrer">
+                        <FaEnvelope className="icon"/> {profileData.contact.email}
+                    </a>
+                    <a href={`tel:${profileData.contact.phone.replace(/[^\d]/g, '')}`} className="contact-item">
+                        <FaPhone className="icon"/> {profileData.contact.phone}
+                    </a>
+                    <span className="contact-item">
+                    <FaMapMarkerAlt className="icon"/> {profileData.contact.location}
+                    </span>
+                    <span className="contact-item visa-status">
+                    <FaGlobeAmericas className="icon"/> {profileData.contact.visaStatus}
+                    </span>
+                </div>
+
             </header>
 
             <nav className="nav">
