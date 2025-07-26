@@ -100,7 +100,7 @@ const App = () => {
                     sectionRef.current?.classList.add('is-visible');
                 }
             },
-            { threshold: 0.1 }
+            { threshold: 0 }
         );
 
         const current = sectionRef.current;
