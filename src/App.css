@@ -46,6 +46,13 @@ header.header {
   color: #e0e0e0;
 }
 
+.contact-info {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+
 /* Navigation */
 .nav {
   display: flex;

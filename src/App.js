@@ -199,7 +199,7 @@ const App = () => {
         <div className="app">
             <header className="header">
                 <h1>{profileData.name}</h1>
-                <p>{profileData.contact}</p>
+                <p class="contact-info"> {profileData.contact}</p>
             </header>
 
             <nav className="nav">
