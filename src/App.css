@@ -1,0 +1,180 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0ecf8, #ffffff);
+  color: #1c1c1e;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header.header {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.header p {
+  color: #6e6e73;
+  margin-top: 0.5rem;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.nav-btn.active {
+  background-color: #333;
+  color: white;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.job-duration {
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Card Sections */
+.section {
+  max-width: 1300px;  /* increased from 1100px */
+  width: 95%;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Typography & Content */
+.section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #222;
+}
+
+.section h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/*.skill-category {*/
+/*  margin-bottom: 0.8rem;*/
+/*}*/
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  background: #f0f0f5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #1d1d1f;
+  border: 1px solid #ccc;
+}
+
+.job-block, .edu-block {
+  margin-bottom: 1.5rem;
+}
+
+.job-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+ul {
+  margin-top: 0.3rem;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+.summary-text {
+  white-space: pre-line;
+}
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  background: #f1f1f1;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 1.5rem 1rem;
+  }
+}
