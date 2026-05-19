@@ -69,11 +69,6 @@ body {
   color: #f0e130; /* bright accent color on hover */
 }
 
-.icon {
-  font-size: 1.1rem;
-  color: #f0e130;
-}
-
 /* Navigation */
 .nav {
   display: flex;
