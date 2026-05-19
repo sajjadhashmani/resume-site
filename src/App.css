@@ -29,7 +29,7 @@ body {
 /* Header */
 .header {
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 3rem 1rem 2rem;
   background: linear-gradient(to right, #2b5876, #4e4376);
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
