@@ -10,6 +10,37 @@ import './App.css';
 const App = () => {
     const [activeSection, setActiveSection] = useState('about');
 
+    // GA4 Option 2: Function to handle tab switching and track the event
+    const handleSectionChange = (section) => {
+        setActiveSection(section);
+
+        if (window.gtag) {
+            window.gtag('event', 'select_content', {
+                content_type: 'resume_section',
+                item_id: section,
+            });
+        }
+    };
+
+    // Helper functions for tracking contact link clicks
+    const trackEmailClick = () => {
+        if (window.gtag) {
+            window.gtag('event', 'click_email', {
+                event_category: 'engagement',
+                event_label: 'Header Email Link',
+            });
+        }
+    };
+
+    const trackPhoneClick = () => {
+        if (window.gtag) {
+            window.gtag('event', 'click_phone', {
+                event_category: 'engagement',
+                event_label: 'Header Phone Link',
+            });
+        }
+    };
+
     const profileData = {
         name: 'SAJJAD HASHMANI',
         contact: {
@@ -114,8 +145,8 @@ const App = () => {
                                 <div className="skill-list">
                                     {items.map(item => (
                                         <span key={item} className="skill-badge">
-                      {item}
-                    </span>
+                                            {item}
+                                        </span>
                                     ))}
                                 </div>
                             </div>
@@ -195,6 +226,7 @@ const App = () => {
                     <a
                         href={`mailto:${profileData.contact.email}`}
                         className="contact-item"
+                        onClick={trackEmailClick}
                     >
                         <FaEnvelope className="icon" /> {profileData.contact.email}
                     </a>
@@ -202,17 +234,18 @@ const App = () => {
                     <a
                         href={`tel:${profileData.contact.phone.replace(/[^\d]/g, '')}`}
                         className="contact-item"
+                        onClick={trackPhoneClick}
                     >
                         <FaPhone className="icon" /> {profileData.contact.phone}
                     </a>
 
                     <span className="contact-item">
-            <FaMapMarkerAlt className="icon" /> {profileData.contact.location}
-          </span>
+                        <FaMapMarkerAlt className="icon" /> {profileData.contact.location}
+                    </span>
 
                     <span className="contact-item visa-status">
-            <FaGlobeAmericas className="icon" /> {profileData.contact.visaStatus}
-          </span>
+                        <FaGlobeAmericas className="icon" /> {profileData.contact.visaStatus}
+                    </span>
                 </div>
             </header>
 
@@ -220,7 +253,7 @@ const App = () => {
                 {['about', 'skills', 'experience', 'education', 'certifications', 'accomplishments'].map(section => (
                     <button
                         key={section}
-                        onClick={() => setActiveSection(section)}
+                        onClick={() => handleSectionChange(section)}
                         className={`nav-btn ${activeSection === section ? 'active' : ''}`}
                     >
                         {section.charAt(0).toUpperCase() + section.slice(1)}
