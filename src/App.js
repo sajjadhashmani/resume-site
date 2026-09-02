@@ -61,10 +61,9 @@ const App = () => {
             visaStatus: 'US Resident',
         },
         summary:
-            'I’m a Full Stack Software Engineer with a Master’s degree in Computer Science and over 7 years of experience designing, building, and scaling secure, performant web applications. My technical stack spans both front-end and back-end development, with a strong foundation in React, Node.js, Java, and Python.\n\n' +
-            'Throughout my career, I’ve led full lifecycle development of modern, scalable platforms—ranging from consumer-facing interfaces to backend data pipelines and APIs. I’m passionate about crafting user-centric, accessible UIs and building resilient, cloud-native systems that solve real-world problems.\n\n' +
-            'I thrive in cross-functional teams, consistently contributing to code reviews, mentoring junior engineers, and driving architectural decisions that align with long-term product goals. I’ve recently designed systems that integrate AI, text embeddings, and knowledge graphs to enhance data intelligence and semantic search.\n\n' +
-            'Outside of coding, I’m a systems thinker who enjoys debugging complex issues, automating workflows, and optimizing for both performance and maintainability.',
+            'I’m a Senior GenAI Engineer & Full Stack Software Developer with a Master’s degree in Computer Science and over 7 years of experience architecting enterprise AI platforms, Large Language Models (LLMs), Knowledge Graphs, and scalable distributed systems.\n\n' +
+            'My technical stack spans cloud-native backend infrastructures (GCP/AWS), data pipelines, and responsive React web applications. I specialize in bridging LLMs with complex data ecosystems through GraphRAG retrieval engines, agentic self-healing pipelines, vector databases, and Text-to-SQL solutions.\n\n' +
+            'A proven technical leader, I thrive in cross-functional teams, driving cloud-native architecture, mentoring engineering teams, and optimizing systems for long-term performance, security, and maintainability.',
         skills: {
             'Programming/Scripting Languages': ['Java', 'Python', 'JavaScript', 'Node.js', 'React'],
             'AI & Machine Learning': ['Graph RAGs', 'LLMs', 'MCP', 'Text Embeddings', 'Knowledge Graphs', 'Graph Algorithms (WCC, Leiden)'],
