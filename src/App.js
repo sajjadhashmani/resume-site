@@ -41,6 +41,17 @@ const App = () => {
         }
     };
 
+    // Helper to render inline **bold** text safely in React
+    const renderFormattedText = (text) => {
+        const parts = text.split(/(\*\*.*?\*\*)/g);
+        return parts.map((part, index) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+                return <strong key={index}>{part.slice(2, -2)}</strong>;
+            }
+            return part;
+        });
+    };
+
     const profileData = {
         name: 'SAJJAD HASHMANI',
         contact: {
@@ -55,11 +66,11 @@ const App = () => {
             'I thrive in cross-functional teams, consistently contributing to code reviews, mentoring junior engineers, and driving architectural decisions that align with long-term product goals. I’ve recently designed systems that integrate AI, text embeddings, and knowledge graphs to enhance data intelligence and semantic search.\n\n' +
             'Outside of coding, I’m a systems thinker who enjoys debugging complex issues, automating workflows, and optimizing for both performance and maintainability.',
         skills: {
-            'Programming Languages': ['Java', 'Python', 'JavaScript', 'Node.js'],
-            'Frameworks & Libraries': ['Spring Boot', 'React', 'Angular'],
-            'Tools & Databases': ['MySQL', 'PostgreSQL', 'DynamoDB', 'BigQuery', 'Git', 'Jira'],
+            'Programming/Scripting Languages': ['Java', 'Python', 'JavaScript', 'Node.js', 'React'],
+            'AI & Machine Learning': ['Graph RAGs', 'LLMs', 'MCP', 'Text Embeddings', 'Knowledge Graphs', 'Graph Algorithms (WCC, Leiden)'],
+            'Tools & Databases': ['MySQL', 'PostgreSQL', 'DynamoDB', 'BigQuery', 'Google Spanner', 'ChromaDB', 'Neo4j'],
             'Cloud Platforms': ['AWS', 'GCP'],
-            'Software Development': ['Agile Methodologies', 'CI/CD', 'Microservices Architecture', 'RESTful APIs'],
+            'Software Development': ['Agile Methodologies', 'CI/CD', 'Microservices Architecture', 'RESTful APIs', 'Git'],
         },
         accomplishments: [
             '2024 Gartner Eye on Innovation Awards Runner-up (Americas)',
@@ -67,17 +78,29 @@ const App = () => {
         ],
         experience: [
             {
+                title: 'Senior GenAI Engineer',
+                company: 'Deloitte',
+                location: 'Remote',
+                duration: 'April 2026 – Present',
+                description: [
+                    '**Architected a 4-Tier Knowledge Graph on Google Spanner Graph**, modeling schemas, lineage, semantic relationships from 1B+ BigQuery query logs to power production AI-driven analytics (Text-to-SQL/AutoBI).',
+                    '**Designed a Hybrid Retrieval Engine (Embedding Similarity + Graph Traversal)**, executing top-down semantic routing over domain concepts to prune schema context, reducing LLM token overhead by >90% while ensuring deterministic multi-table JOIN execution.',
+                    'Integrated **OpenAI’s text-embedding-3-large and pgvector** to generate high-dimensional semantic embeddings for BigQuery schema metadata, enabling **cosine similarity clustering** that enhanced AutoBI Text-to-SQL contextual understanding and natural language query accuracy.',
+                    '**Implemented an Agentic Self-Healing Feedback Loop & Guardrail Framework**, enriching graph nodes via OpenAI embeddings while leveraging database error traces to dynamically auto-correct malformed SQL queries at runtime.',
+                    'Developed a **Generative AI-powered SQL Query Optimizer**, leveraging LLMs to analyze query execution plans and recommend performance improvements, resulting in up to **50% faster** query execution times.'
+                ],
+            },
+            {
                 title: 'Senior Software Engineer Consultant',
                 company: 'Verizon',
                 location: 'Remote',
-                duration: 'July 2023 – Present',
+                duration: 'July 2023 – April 2026',
                 description: [
-                    'Designed and implemented a multi-layered knowledge graph from BigQuery logs, leveraging graph algorithms (WCC, Leiden) to semantically cluster over 100 million queries, improving data discoverability and insight generation.',
-                    'Integrated GPT-based summarization and OpenAI’s text-embedding-5-large to enrich node metadata with high-dimensional semantic embeddings, enabling cosine similarity clustering that enhanced AutoBI Text-to-SQL contextual understanding and natural language query accuracy.',
-                    'Led the proof-of-concept for Aible.ai, enabling natural language interaction and insight extraction from BigQuery data using Generative AI with SQL and reasoning prompt augmentation.',
-                    'Managed and mentored a team of 3 developers to build data protection solutions using Apache Atlas and MicroFocus, securing data at rest across 1000+ tables to ensure compliance and data privacy.',
-                    'Implemented synthetic data generation workflows that mimic production data characteristics, enabling scalable and realistic testing environments without compromising production data security or integrity.',
-                    'Developed and deployed a Test Data Management solution leveraging K2View Fabric to mask and protect over 500 million records, empowering teams with secure, seamless access to test data across production and non-production environments.'
+                    '**Developed an Agentic Text-to-SQL Pipeline**, utilizing LLM tool-calling and direct schema injection to convert plain-English business questions into executable PostgreSQL queries across relational domain tables.',
+                    '**Engineered a Self-Correction Reflection Loop**, capturing PostgreSQL runtime exceptions and re-feeding schema context alongside error traces into the LLM to auto-correct malformed syntax and self-heal failed queries.',
+                    '**Implemented Safety Guardrails & Validation Constraints**, restricting SQL generation strictly to read-only SELECT queries, enforcing AST/regex query sanitization, and setting dynamic retry limits to prevent infinite execution loops',
+                    'Led the evaluation and technical integration strategy for **Aible.ai**, delivering a proof-of-concept that enabled users to chat over BigQuery data using Generative AI, structured context retrieval, and reasoning-based prompt orchestration.',
+                    'Led a team of 3 engineers to design and build a scalable **synthetic data generation** pipeline that preserved production data characteristics across multiple sources, enabling realistic testing while maintaining strict **data privacy and security guarantees**.'
                 ],
             },
             {
@@ -86,10 +109,10 @@ const App = () => {
                 location: 'Dallas, TX',
                 duration: 'November 2019 – July 2023',
                 description: [
-                    'Optimized SQL queries for reporting by applying Common Table Expressions, server-side pagination, and indexing, achieving up to 70% reduction in query runtime and significantly improving system performance.',
-                    'Designed and developed responsive Single-Page Applications for appointment scheduling, product/process tracking, and call log management, enhancing operational efficiency and issue tracking.',
-                    'Led peer code reviews and championed Agile methodologies to uphold high code quality standards within the development team.',
-                    'Trained and mentored interns and junior developers, leading project deliveries and fostering a culture of continuous learning and collaboration.'
+                    'Optimized SQL queries for reporting by applying **Common Table Expressions, server-side pagination, and indexing**, achieving up to **70% reduction** in query runtime and significantly improving system performance.',
+                    'Designed and developed responsive **Single-Page Applications** for appointment scheduling, product/process tracking, and call log management, enhancing operational efficiency and issue tracking.',
+                    'Led peer **code reviews and championed Agile methodologies** to uphold high code quality standards within the development team.',
+                    '**Trained and mentored interns and junior developers**, leading project deliveries and fostering a culture of continuous learning and collaboration.'
                 ],
             },
             {
@@ -98,9 +121,9 @@ const App = () => {
                 location: 'Piscataway, NJ',
                 duration: 'March 2019 – November 2019',
                 description: [
-                    'Led architectural revamp initiatives for machine learning projects spanning multiple Verizon technical departments, improving system scalability and integration.',
-                    'Analyzed requirements and documented the current architectural landscape across Big Data, ML technologies, and VZ Connect to inform strategic technology decisions.',
-                    'Designed future-proof AI/ML platform architectures applying enterprise North Star principles, aligning cross-functional teams on scalable, robust solutions.'
+                    'Led architectural revamp initiatives for **machine learning projects** spanning multiple Verizon technical departments, improving system scalability and integration.',
+                    'Analyzed requirements and documented the current architectural landscape across **Big Data, ML technologies, and VZ Connect to inform strategic technology decisions.**',
+                    'Designed future-proof **AI/ML platform architectures** applying enterprise **North Star principles**, aligning cross-functional teams on scalable, robust solutions.'
                 ],
             }
         ],
@@ -167,7 +190,7 @@ const App = () => {
                                 </div>
                                 <ul>
                                     {job.description.map((desc, i) => (
-                                        <li key={i}>{desc}</li>
+                                        <li key={i}>{renderFormattedText(desc)}</li>
                                     ))}
                                 </ul>
                             </div>
@@ -227,6 +250,8 @@ const App = () => {
                         href={`mailto:${profileData.contact.email}`}
                         className="contact-item"
                         onClick={trackEmailClick}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <FaEnvelope className="icon" /> {profileData.contact.email}
                     </a>
@@ -234,7 +259,9 @@ const App = () => {
                     <a
                         href={`tel:${profileData.contact.phone.replace(/[^\d]/g, '')}`}
                         className="contact-item"
+                        target="_blank"
                         onClick={trackPhoneClick}
+                        rel="noopener noreferrer"
                     >
                         <FaPhone className="icon" /> {profileData.contact.phone}
                     </a>
