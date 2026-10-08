@@ -58,12 +58,13 @@ const App = () => {
             email: 'sajjadhashmani1@gmail.com',
             phone: '(682) 256-5391',
             location: 'Boston, MA',
-            visaStatus: 'US Resident',
+            visaStatus: 'No Sponsorship Required',
         },
         summary:
-            'I’m a Senior GenAI Engineer & Full Stack Software Developer with a Master’s degree in Computer Science and over 7 years of experience architecting enterprise AI platforms, Large Language Models (LLMs), Knowledge Graphs, and scalable distributed systems.\n\n' +
-            'My technical stack spans cloud-native backend infrastructures (GCP/AWS), data pipelines, and responsive React web applications. I specialize in bridging LLMs with complex data ecosystems through GraphRAG retrieval engines, agentic self-healing pipelines, vector databases, and Text-to-SQL solutions.\n\n' +
-            'A proven technical leader, I thrive in cross-functional teams, driving cloud-native architecture, mentoring engineering teams, and optimizing systems for long-term performance, security, and maintainability.',
+            'I’m a Senior GenAI & Full Stack Software Engineer with a Master’s degree in Computer Science and over 7 years of experience designing, building, and scaling enterprise AI platforms, Large Language Models (LLMs), Knowledge Graphs, and distributed web applications.\n\n' +
+            'My technical stack spans both front-end and back-end development—with a strong foundation in React, Node.js, Java, and Python—alongside deep expertise in bridging LLMs with complex data infrastructures through GraphRAG retrieval engines, agentic self-healing pipelines, vector databases, transformer architectures, and Text-to-SQL solutions.\n\n' +
+            'Throughout my career, I’ve led full lifecycle development of modern, scalable platforms, ranging from consumer-facing interfaces to cloud-native architectures (GCP/AWS), backend data pipelines, and APIs. I’m passionate about crafting user-centric UIs, mentoring engineering teams, and driving architectural decisions that align with long-term product goals.\n\n' +
+            'Outside of coding, I’m a systems thinker who enjoys debugging complex issues, automating workflows, and optimizing systems for performance, security, and maintainability.',
         skills: {
             'Programming/Scripting Languages': ['Java', 'Python', 'JavaScript', 'Node.js', 'React'],
             'AI & Machine Learning': ['Graph RAGs', 'LLMs', 'MCP', 'Text Embeddings', 'Knowledge Graphs', 'Graph Algorithms (WCC, Leiden)'],
