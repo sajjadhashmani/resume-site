@@ -66,11 +66,29 @@ const App = () => {
             'Throughout my career, I’ve led full lifecycle development of modern, scalable platforms, ranging from consumer-facing interfaces to cloud-native architectures (GCP/AWS), backend data pipelines, and APIs. I’m passionate about crafting user-centric UIs, mentoring engineering teams, and driving architectural decisions that align with long-term product goals.\n\n' +
             'Outside of coding, I’m a systems thinker who enjoys debugging complex issues, automating workflows, and optimizing systems for performance, security, and maintainability.',
         skills: {
-            'Programming/Scripting Languages': ['Java', 'Python', 'JavaScript', 'Node.js', 'React'],
-            'AI & Machine Learning': ['Graph RAGs', 'LLMs', 'MCP', 'Text Embeddings', 'Knowledge Graphs', 'Graph Algorithms (WCC, Leiden)'],
-            'Tools & Databases': ['MySQL', 'PostgreSQL', 'DynamoDB', 'BigQuery', 'Google Spanner', 'ChromaDB', 'Neo4j'],
-            'Cloud Platforms': ['AWS', 'GCP'],
-            'Software Development': ['Agile Methodologies', 'CI/CD', 'Microservices Architecture', 'RESTful APIs', 'Git'],
+            'AI & Agentic Systems': [
+                'Generative AI', 'Large Language Models (LLMs)', 'Agentic AI', 'AI Applications',
+                'Agent Tool Integration', 'MCP (Model Context Protocol)', 'Structured Tool Calling',
+                'LLM Orchestration', 'Agent Workflows',
+            ],
+            'RAG & Grounding': [
+                'Retrieval-Augmented Generation (RAG)', 'GraphRAG', 'Knowledge Graphs', 'Vector Databases',
+                'Semantic Retrieval', 'Hybrid Search', 'BM25', 'Reciprocal Rank Fusion (RRF)', 'Schema Grounding',
+            ],
+            'AI Security & Safety': [
+                'AI Safety Controls', 'Secure Tool Execution', 'SQL Validation', 'AST/Regex Sanitization',
+                'Read-Only Query Enforcement', 'Data Privacy', 'Sensitive Data Protection',
+            ],
+            'Programming Languages': ['Java', 'Python', 'Node.js', 'React', 'JavaScript'],
+            'Databases & Data Platforms': ['PostgreSQL', 'MySQL', 'Google Spanner', 'Neo4j', 'BigQuery', 'ChromaDB'],
+            'Cloud & Distributed Systems': [
+                'Google Cloud Platform (GCP)', 'AWS', 'Vertex AI', 'Cloud Architecture',
+                'Distributed Systems', 'System Design',
+            ],
+            'Engineering & Architecture': [
+                'API Integration', 'Workflow Orchestration', 'Control Plane Architecture',
+                'Modular Architecture', 'Technical Leadership', 'Agile Development', 'Code Reviews',
+            ],
         },
         accomplishments: [
             '2024 Gartner Eye on Innovation Awards Runner-up (Americas)',
@@ -83,11 +101,13 @@ const App = () => {
                 location: 'Remote',
                 duration: 'April 2026 – Present',
                 description: [
-                    '**Architected a 4-Tier Knowledge Graph on Google Spanner Graph**, modeling schemas, lineage, semantic relationships from 1B+ BigQuery query logs to power production AI-driven analytics (Text-to-SQL/AutoBI).',
-                    '**Designed a Hybrid Retrieval Engine (Embedding Similarity + Graph Traversal)**, executing top-down semantic routing over domain concepts to prune schema context, reducing LLM token overhead by >90% while ensuring deterministic multi-table JOIN execution.',
-                    'Integrated **OpenAI’s text-embedding-3-large and pgvector** to generate high-dimensional semantic embeddings for BigQuery schema metadata, enabling **cosine similarity clustering** that enhanced AutoBI Text-to-SQL contextual understanding and natural language query accuracy.',
-                    '**Implemented an Agentic Self-Healing Feedback Loop & Guardrail Framework**, enriching graph nodes via OpenAI embeddings while leveraging database error traces to dynamically auto-correct malformed SQL queries at runtime.',
-                    'Developed a **Generative AI-powered SQL Query Optimizer**, leveraging LLMs to analyze query execution plans and recommend performance improvements, resulting in up to **50% faster** query execution times.'
+                    'Architected and built an end-to-end GraphRAG platform enabling natural-language access to complex relational data, transforming user questions into executable SQL and human-readable answers through graph-guided schema discovery and LLM-based query generation.',
+                    'Designed a four-layer semantic knowledge graph combining weakly connected components (WCC), Leiden community detection, LLM-generated node descriptions, and embedding-based similarity clustering to unify semantically equivalent columns and organize related schema entities into hierarchical retrieval structures.',
+                    'Built a hybrid GraphRAG retrieval pipeline integrating dense vector search, BM25 keyword retrieval, Reciprocal Rank Fusion (RRF), and Vertex AI reranking to retrieve relevant schema context, prune irrelevant columns, and identify join paths for context-aware SQL generation.',
+                    'Architected an MCP-based AI infrastructure provisioning platform enabling natural-language infrastructure creation through Copilot, using a discovery-driven tool interface and centralized control-plane orchestration.',
+                    'Engineered a three-layer architecture comprising a generic MCP tool interface, a centralized control plane, and an extensible adapter framework, enabling new infrastructure resource types to be integrated without modifying the AI-facing tools.',
+                    'Implemented stateful provisioning and workflow orchestration with database-backed context enrichment, TTL-based expiration, and composable resource adapters to reuse user inputs and provision multiple infrastructure resources through a unified interface.'
+
                 ],
             },
             {
@@ -96,23 +116,23 @@ const App = () => {
                 location: 'Remote',
                 duration: 'July 2023 – April 2026',
                 description: [
-                    '**Developed an Agentic Text-to-SQL Pipeline**, utilizing LLM tool-calling and direct schema injection to convert plain-English business questions into executable PostgreSQL queries across relational domain tables.',
-                    '**Engineered a Self-Correction Reflection Loop**, capturing PostgreSQL runtime exceptions and re-feeding schema context alongside error traces into the LLM to auto-correct malformed syntax and self-heal failed queries.',
-                    '**Implemented Safety Guardrails & Validation Constraints**, restricting SQL generation strictly to read-only SELECT queries, enforcing AST/regex query sanitization, and setting dynamic retry limits to prevent infinite execution loops',
-                    'Led the evaluation and technical integration strategy for **Aible.ai**, delivering a proof-of-concept that enabled users to chat over BigQuery data using Generative AI, structured context retrieval, and reasoning-based prompt orchestration.',
-                    'Led a team of 3 engineers to design and build a scalable **synthetic data generation** pipeline that preserved production data characteristics across multiple sources, enabling realistic testing while maintaining strict **data privacy and security guarantees**.'
+                    'Developed an Agentic Text-to-SQL Pipeline, utilizing LLM tool-calling and direct schema injection to convert plain-English business questions into executable PostgreSQL queries across relational domain tables.',
+                    'Engineered a Self-Correction Reflection Loop, capturing PostgreSQL runtime exceptions and re-feeding schema context alongside error traces into the LLM to auto-correct malformed syntax and self-heal failed queries',
+                    'Implemented Safety Guardrails & Validation Constraints, restricting SQL generation strictly to read-only SELECT queries, enforcing AST/regex query sanitization, and setting dynamic retry limits to prevent infinite execution loops',
+                    'Led a team of 3 engineers to design and build a scalable synthetic data generation pipeline that preserved production data characteristics across multiple sources, enabling realistic testing while maintaining strict data privacy and security guarantees.'
+
                 ],
             },
             {
-                title: 'Software Developer III',
+                title: 'Software Developer I - III',
                 company: 'Paycom',
                 location: 'Dallas, TX',
                 duration: 'November 2019 – July 2023',
                 description: [
-                    'Optimized SQL queries for reporting by applying **Common Table Expressions, server-side pagination, and indexing**, achieving up to **70% reduction** in query runtime and significantly improving system performance.',
-                    'Designed and developed responsive **Single-Page Applications** for appointment scheduling, product/process tracking, and call log management, enhancing operational efficiency and issue tracking.',
-                    'Led peer **code reviews and championed Agile methodologies** to uphold high code quality standards within the development team.',
-                    '**Trained and mentored interns and junior developers**, leading project deliveries and fostering a culture of continuous learning and collaboration.'
+                    'Optimize SQL queries for generating reports by implementing techniques such as Common Table Expressions (CTEs), server-side pagination, and indexing. Achieved significant runtime reduction, up to 70%, for improved performance.',
+                    'Design and develop Single-Page Applications (SPAs) for appointment scheduling, product/process tracking, and call log management systems to track and record issues and outcomes efficiently.',
+                    'Conducted peer code reviews and followed Agile practices to ensure code quality within the development team.'
+
                 ],
             },
             {
